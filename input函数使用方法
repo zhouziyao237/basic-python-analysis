@@ -1,0 +1,54 @@
+本节课主要介绍input函数使用方法：
+Python 的 input() 函数用于获取用户输入的字符串。它是一个非常简单的函数，但是它非常强大，因为它允许你从用户那里获取输入，并将这些输入用于你的程序中。
+
+以下是 input() 函数的一些基本使用方法：
+
+基本输入：
+
+python
+user_input = input("请输入一些内容：")
+print("你输入的内容是：", user_input)
+带提示的输入：
+input() 函数可以接受一个字符串作为参数，这个字符串会在用户输入之前显示在屏幕上，作为提示。
+
+python
+name = input("请输入你的名字：")
+print("你好，", name)
+类型转换：
+input() 函数默认返回的是字符串类型，如果你需要其他类型的数据，需要使用类型转换函数，比如 int()、float() 等。
+
+python
+age = input("请输入你的年龄：")
+age = int(age)  # 将输入的字符串转换为整数
+print("你的年龄是：", age)
+错误处理：
+在获取输入时，可能会发生错误，比如用户输入的不是数字。这时，可以使用 try...except 语句来处理这些错误。
+
+python
+try:
+  age = int(input("请输入你的年龄："))
+  print("你的年龄是：", age)
+except ValueError:
+  print("请输入一个有效的数字！")
+循环输入：
+你可以使用循环来不断地获取用户输入，直到满足某个条件。
+
+python
+while True:
+  user_input = input("输入'q'退出，否则继续：")
+  if user_input.lower() == 'q':
+    break
+  print("你输入的是：", user_input)
+多行输入：
+默认情况下，input() 函数在用户按下回车键后结束输入。如果你需要用户输入多行文本，可以使用 input() 函数的 splitlines() 方法。
+
+python
+print("请输入多行文本，输入空行结束：")
+lines = []
+while True:
+  line = input()
+  if line == "":
+    break
+  lines.append(line)
+print("\n".join(lines))
+这些是 input() 函数的一些基本使用方法。根据你的具体需求，你可以灵活地使用这个函数来获取用户输入。
